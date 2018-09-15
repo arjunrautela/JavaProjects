@@ -1,5 +1,7 @@
 package com.rest.controller;
 
+import java.util.HashMap;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpHeaders;
@@ -49,5 +51,13 @@ public class BookControllerV4 {
 		HttpHeaders respHeaders = new HttpHeaders();
 		respHeaders.set("x-session-id", "123-456-789");
 		return new ResponseEntity<>(bkstr.getStudent(id), respHeaders,HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/book", method=RequestMethod.GET)
+	public ResponseEntity<HashMap<Integer, Book>> getAllBooks(){
+		
+		BookStorage bks = new BookStorage();
+		
+		return new ResponseEntity<>(bks.getAllBook(), HttpStatus.OK);
 	}
 }

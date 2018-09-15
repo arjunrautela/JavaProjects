@@ -17,5 +17,9 @@ public class BookStorage {
 		
 		return BookMem.get(id);
 	}
+	
+	public HashMap<Integer, Book> getAllBook(){
+		return (HashMap<Integer, Book>) BookMem;
+	}
 
 }

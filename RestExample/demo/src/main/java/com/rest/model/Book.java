@@ -1,7 +1,5 @@
 package com.rest.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Book {
 
 	private int index;
